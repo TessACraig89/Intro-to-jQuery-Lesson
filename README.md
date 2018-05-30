@@ -17,7 +17,7 @@
 - Use vanilla JavaScript to manipulate the DOM
 - Use a text editor
 
-## jQuery - Intro 
+## jQuery - Intro
 
 #### What is jQuery?
 jQuery is an open source 3rd-party library that is intended to make front-end development tasks — particularly those involving DOM selection and manipulation — easier, faster, and more fun.
@@ -48,7 +48,7 @@ From a CDN (content delivery network) like [CDNJS](https://cdnjs.com/) or [Googl
 
 [CDNJS](http://www.cdnjs.com), [Google Hosted Libraries](https://developers.google.com/speed/libraries/), and the [jQuery site](http://www.jquery.com) will all allow you to download a copy of jQuery to include in your projects.
 
-:eyes: Recommendation: Google Hosted Libraries. Super Reliable, very fast. 
+:eyes: Recommendation: Google Hosted Libraries. Super Reliable, very fast.
 
 #### What's with the 'min.js' in the name of the jQuery file?
 
@@ -58,11 +58,11 @@ From a CDN (content delivery network) like [CDNJS](https://cdnjs.com/) or [Googl
 
 Minification is the process of making a file smaller by:
 
-- removing all line breaks and whitespace 
+- removing all line breaks and whitespace
 - reducing the length of variable and function names
-- stripping out all comments. 
+- stripping out all comments.
 
-Minification reduces the jQuery library's size to 1/3 of its original size. 
+Minification reduces the jQuery library's size to 1/3 of its original size.
 
 Minified scripts are not meant to be read by humans, so most servers that host jQuery and other libraries will also offer the original (non-minified) version of the code so developers can understand the code.
 
@@ -94,14 +94,14 @@ document.getElementByClassName('someClass');
 $('p.anotherClass') // Selects all <p> tags that also have the class "anotherClass" (<p class="anotherClass")
 
 ```
-:eyes: 
+:eyes:
 
 - Watch out! Remember to put the `#` or `.` to tell jQuery if you are selecting an id or class!
 - When you do the above, a "jQuery" object is returned
 
 ```JavaScript
 
-// We prepend '$' to variable names when a variable is going to be a jQuery object to help us remember what that variable is for. This is just a naming convention, the computer cares not what we call it. 
+// We prepend '$' to variable names when a variable is going to be a jQuery object to help us remember what that variable is for. This is just a naming convention, the computer cares not what we call it.
 
 var $jqObject = $('p'); // Returns a jQuery object containing all <p> tags on your web page.
 
@@ -149,7 +149,7 @@ There are three things about the example above that make jQuery easier to use:
   1. jQuery is using the same syntax as CSS to select elements
   2. jQuery allows us easier chaining of methods together to accomplish our goals (i.e., $().html(...) ), making code shorter and easier to understand
   3. jQuery deals with cross-browser compatibility issues which may arise
-  
+
 &#x1F535; **Activity**
 ```
 * Go back to the JSBin above
@@ -236,19 +236,20 @@ But that seems kind of boring. I mean, what if we want to do something with less
 [Here's a repeat of the last example](http://jsbin.com/wevoti/1/edit?html,js,output) that sets the text in all elements of class="myClass" to a random color. Try to understand how it works before moving on:
 
 ```javascript
+// TC randColorValue function that returns rounded down product of a random number greater than 0 but less than one and 255
 var randColorValue = function() {
   return Math.floor( Math.random() * 255 );
 }
-
+// TC randColor function assigns a randomColorValue to a red, green, and blue variables
 var randColor = function() {
   var red = randColorValue();
   var green = randColorValue();
   var blue = randColorValue();
-
+// TC randColor function returns "rgb" followed by the randColorValue for each
   return "rgb(" + red + "," + green + "," + blue + ")";
 
 }
-
+// TC modifies color of all elements with the class of myClass to be the value returned by the randColor function
 $(".myClass").css("color", randColor() );
 ```
 
@@ -256,8 +257,8 @@ $(".myClass").css("color", randColor() );
 ```
 * Go to [Reddit.com](http://www.reddit.com) and open your dev tools console
 * Reddit uses jQuery, so we can use our Chrome developer console to manipulate the site in real time using jQuery!
-* Start by typing a '$' into the console to verify jQuery is loaded. 
-* Go ahead and see what you can do! Can you turn the page different colors? Can you remove elements? Can you insert a photo? Hack it to pieces! 
+* Start by typing a '$' into the console to verify jQuery is loaded.
+* Go ahead and see what you can do! Can you turn the page different colors? Can you remove elements? Can you insert a photo? Hack it to pieces!
 * 10 minutes
 ```
 HINT: Here's a fun way to get started:
@@ -283,7 +284,7 @@ touch index.html
 touch app.js
 atom .
 ```
-Drop this boilerplate in your HTML: 
+Drop this boilerplate in your HTML:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -301,12 +302,12 @@ Drop this boilerplate in your HTML:
 </html>
 ```
 
-Steps: 
+Steps:
 
 1. In our CSS file let's make a CSS class `.big-image` that sets the width to 600px
 2. Now in our Javascript file, lets use jQuery to select our image and save it in a variable $geometricImage
 3. Next, let's create a click event using jQuery that adds the `.big-image` class to the image when it is clicked
-4. Finally, let's modify our click event to remove the class when clicked again. 
+4. Finally, let's modify our click event to remove the class when clicked again.
 
 ## Conclusion
 
