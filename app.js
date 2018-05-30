@@ -1,4 +1,6 @@
 console.log("hello");
-// const $button = $('button');
-//
-// $button.click(console.log("hi"););
+const mainButton = $('button');
+
+$(mainButton).click(function() {
+  mainButton.html('goodbye');
+});
