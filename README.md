@@ -273,6 +273,11 @@ $('img').show()
 ```
 - Can you change the `src` property of all of the images?
 
+// My Solution
+```javascript
+$('img').attr("src","http://dummyimage.com/450x255/");
+```
+
 ## Let's set up a real webpage
 
 :computer: Code Together!
